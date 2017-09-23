@@ -1,8 +1,8 @@
 {
-    "name":         "jms/translation-bundle",
+    "name":         "shch/translation-bundle",
     "description":  "Puts the Symfony Translation Component on steroids",
     "keywords":     ["translation", "multilanguage", "extract", "webinterface", "ui", "i18n", "extraction", "interface"],
-    "homepage":     "http://jmsyst.com/bundles/JMSTranslationBundle",
+    "homepage":     "https://github.com/shchedrakov/JMSTranslationBundle",
     "type":         "symfony-bundle",
     "license":      "Apache2",
     "authors": [
