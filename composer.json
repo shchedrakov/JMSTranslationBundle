@@ -1,5 +1,5 @@
 {
-    "name":         "shch/translation-bundle",
+    "name":         "shchedrakov/translation-bundle",
     "description":  "Puts the Symfony Translation Component on steroids",
     "keywords":     ["translation", "multilanguage", "extract", "webinterface", "ui", "i18n", "extraction", "interface"],
     "homepage":     "https://github.com/shchedrakov/JMSTranslationBundle",
