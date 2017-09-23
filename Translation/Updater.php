@@ -169,7 +169,25 @@ class Updater
 
             $outputFile = $this->config->getTranslationsDir().'/'.$name.'.'.$this->config->getLocale().'.'.$format;
             $this->logger->info(sprintf('Writing translation file "%s".', $outputFile));
-            $this->writer->write($this->scannedCatalogue, $name, $outputFile, $format);
+
+            // create directory for every locale
+            if ( ! file_exists(dirname($outputFile))) {
+                mkdir(dirname($outputFile), 0777, true);
+            }
+
+            // create or rewrite trans-file
+            if ( ! file_exists($outputFile)) {
+                $this->writer->write($this->scannedCatalogue, $name, $outputFile, $format);
+            } else {
+                $oldContent = file($outputFile);
+                $this->writer->write($this->scannedCatalogue, $name, $outputFile, $format);
+                // needs to save a first line trans-file.
+                if (MetadataMaster::isMetadata($oldContent[0])) {
+                    $newContent = file($outputFile);
+                    array_unshift($newContent, $oldContent[0]);
+                    file_put_contents($outputFile, $newContent);
+                }
+            }
         }
     }
 
