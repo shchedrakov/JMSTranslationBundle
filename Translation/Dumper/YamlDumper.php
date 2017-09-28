@@ -81,10 +81,10 @@ class YamlDumper extends ArrayStructureDumper
             $this->writer->write(Inline::dump($k).':');
 
             if ($isMessage) {
-                $this->writer->write(' '.Inline::dump($v->getLocaleString()));
-
-                if ($v->isNew()) {
-                    $this->writer->write('   # FIXME');
+                if (preg_match("/{$v->getDomain()}\.\w/", $v->getLocaleString())) {
+                    $this->writer->write(' '.Inline::dump(''));
+                } else {
+                    $this->writer->write(' '.Inline::dump($v->getLocaleString()));
                 }
 
                 $this->writer->write("\n");
