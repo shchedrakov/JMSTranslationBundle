@@ -4,7 +4,6 @@ namespace JMS\TranslationBundle\Translation;
 
 /**
  * Contain logic of handling of metadata in translation files.
- *
  * Class MetadataMaster
  * @package Telekom\SiteReportBundle\Command\Translation
  */
