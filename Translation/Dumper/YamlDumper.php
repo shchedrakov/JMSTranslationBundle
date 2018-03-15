@@ -62,7 +62,7 @@ class YamlDumper extends ArrayStructureDumper
                 $meaning = $v->getMeaning();
 
                 if (!$isFirst && (!$precededByMessage || $desc || $meaning)) {
-                    $this->writer->write("\n");
+                    // $this->writer->write("\n");
                 }
 
                 if ($desc) {
@@ -73,7 +73,7 @@ class YamlDumper extends ArrayStructureDumper
                     $this->writer->writeln('# Meaning: '.$meaning);
                 }
             } elseif (!$isFirst) {
-                $this->writer->write("\n");
+                // $this->writer->write("\n");
             }
 
             $isFirst = false;
